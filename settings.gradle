@@ -1,0 +1,15 @@
+rootProject.name = 'rapid-alert-platform'
+
+include 'security-service'
+include 'recipient-service'
+include 'template-service'
+include 'notification-service'
+include 'file-service'
+
+include 'api-gateway'
+include 'discovery-server'
+include 'telegram-bot-server'
+
+include 'sender'
+include 'rebalancer'
+include 'url-shortener'
