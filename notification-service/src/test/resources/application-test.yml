@@ -1,0 +1,27 @@
+spring:
+  # Testcontainers JDBC driver auto-spins a Postgres container on first use
+  # and reuses it across tests in the same JVM. This removes the dependency
+  # on a CI-provided database service.
+  datasource:
+    url: jdbc:tc:postgresql:15-alpine:///notification
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    username: test
+    password: test
+  jpa:
+    properties.hibernate:
+      ddl-auto: update
+    show-sql: false
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers:localhost:9092}
+    topics:
+      notifications:
+        email: email-notification-test
+        phone: phone-notification-test
+        telegram: telegram-notification-test
+        push: push-notification-test
+      splitter: recipient-list-splitter-test
+      triage-events: rapid-alert.triage-events-test
+
+eureka:
+  client:
+    enabled: false
