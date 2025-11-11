@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15-alpine:///recipient
+    username: test
+    password: test
+  jpa:
+    properties.hibernate:
+      ddl-auto: update
+    show-sql: false
+  kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers:localhost:9092}
+    topics:
+      recipient-update: recipient-update-test
+      template-update: template-update-test
+
+eureka:
+  client:
+    enabled: false
