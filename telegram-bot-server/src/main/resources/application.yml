@@ -1,0 +1,9 @@
+server:
+  port: 0
+
+bot:
+  # Both values must be provided via env vars in any deployed environment.
+  # Defaults below let the app boot when no real Telegram credentials are configured;
+  # the bot registers but will never receive real updates.
+  name: ${BOT_NAME:RapidAlertBot}
+  token: ${BOT_TOKEN:dev-bot-token-replace-me}
