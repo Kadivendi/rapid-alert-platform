@@ -1,0 +1,98 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: security-service
+          uri: lb://SECURITY-SERVICE
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: security-service-docs
+          uri: lb://SECURITY-SERVICE
+          predicates:
+            - Path=/security-service/api-docs/**
+
+        - id: notification-service
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/api/v1/notifications/**
+          filters:
+            - Authentication
+        - id: notification-service-docs
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification-service/api-docs/**
+
+        - id: template-service
+          uri: lb://TEMPLATE-SERVICE
+          predicates:
+            - Path=/api/v1/templates/**
+          filters:
+            - Authentication
+        - id: template-service-docs
+          uri: lb://TEMPLATE-SERVICE
+          predicates:
+            - Path=/template-service/api-docs/**
+
+        - id: recipient-service
+          uri: lb://RECIPIENT-SERVICE
+          predicates:
+            - Path=/api/v1/recipients/**
+          filters:
+            - Authentication
+        - id: recipient-service-docs
+          uri: lb://RECIPIENT-SERVICE
+          predicates:
+            - Path=/recipient-service/api-docs/**
+
+        - id: file-service
+          uri: lb://FILE-SERVICE
+          predicates:
+            - Path=/api/v1/files/**
+          filters:
+            - Authentication
+        - id: file-service-docs
+          uri: lb://FILE-SERVICE
+          predicates:
+            - Path=/file-service/api-docs/**
+
+        - id: url-shortener
+          uri: lb://URL-SHORTENER
+          predicates:
+            - Path=/api/v1/responses/**
+        - id: url-shortener-docs
+          uri: lb://URL-SHORTENER
+          predicates:
+            - Path=/url-shortener/api-docs/**
+
+# http://localhost:8080/webjars/swagger-ui/index.html
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    url: http://localhost:8080/v3/api-docs
+    urls:
+      - name: notification-service
+        url: /notification-service/api-docs
+      - name: security-service
+        url: /security-service/api-docs
+      - name: template-service
+        url: /template-service/api-docs
+      - name: recipient-service
+        url: /recipient-service/api-docs
+      - name: file-service
+        url: /file-service/api-docs
+      - name: url-shortener
+        url: /url-shortener/api-docs
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+urls:
+  validate: http://localhost:8080/api/v1/auth/validate
