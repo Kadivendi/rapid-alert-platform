@@ -1,0 +1,252 @@
+version: '3.8'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  broker:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: broker
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      # In-network services connect via PLAINTEXT_INTERNAL://broker:29092; host-side tools use PLAINTEXT://localhost:9092.
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_INTERNAL://0.0.0.0:29092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  security-service-postgres:
+    image: postgres:alpine3.17
+    restart: always
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_DB: security
+      POSTGRES_USER: ${POSTGRES_USER:-rapidalert_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      PGDATA: /data
+    volumes:
+      - db-postgres-security:/data
+
+  recipient-service-postgres:
+    image: postgres:alpine3.17
+    restart: always
+    ports:
+      - '5435:5432'
+    environment:
+      POSTGRES_DB: recipient
+      POSTGRES_USER: ${POSTGRES_USER:-rapidalert_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      PGDATA: /data
+    volumes:
+      - db-postgres-recipient:/data
+
+  template-service-postgres:
+    image: postgres:alpine3.17
+    restart: always
+    ports:
+      - '5434:5432'
+    environment:
+      POSTGRES_DB: template
+      POSTGRES_USER: ${POSTGRES_USER:-rapidalert_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      PGDATA: /data
+    command: ["postgres", "-c", "wal_level=logical"]
+    volumes:
+      - db-postgres-template:/data
+
+  notification-service-postgres:
+    image: postgres:alpine3.17
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: notification
+      POSTGRES_USER: ${POSTGRES_USER:-rapidalert_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      PGDATA: /data
+    volumes:
+      - db-postgres-notification:/data
+
+  shortener-service-postgres:
+    image: postgres:alpine3.17
+    restart: always
+    ports:
+      - '5436:5432'
+    environment:
+      POSTGRES_DB: shortener
+      POSTGRES_USER: ${POSTGRES_USER:-rapidalert_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      PGDATA: /data
+    volumes:
+      - db-postgres-shortener:/data
+
+  discovery-server:
+    build:
+      context: ./discovery-server
+    restart: always
+    ports:
+      - '8761:8761'
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    restart: always
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+
+  security-service:
+    build:
+      context: ./security-service
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - POSTGRES_USER=${POSTGRES_USER:-rapidalert_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      - SECURITY_DB_HOST=security-service-postgres
+      - SECURITY_DB_PORT=5432
+      - JWT_SIGNING_KEY=${JWT_SIGNING_KEY:-}
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - security-service-postgres
+      - discovery-server
+      - api-gateway
+
+  recipient-service:
+    build:
+      context: ./recipient-service
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - POSTGRES_USER=${POSTGRES_USER:-rapidalert_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      - RECIPIENT_DB_HOST=recipient-service-postgres
+      - KAFKA_BOOTSTRAP_SERVERS=broker:29092
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - recipient-service-postgres
+      - discovery-server
+      - api-gateway
+      - zookeeper
+      - broker
+
+  template-service:
+    build:
+      context: ./template-service
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - POSTGRES_USER=${POSTGRES_USER:-rapidalert_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      - TEMPLATE_DB_HOST=template-service-postgres
+      - KAFKA_BOOTSTRAP_SERVERS=broker:29092
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - template-service-postgres
+      - discovery-server
+      - api-gateway
+      - zookeeper
+      - broker
+
+  notification-service:
+    build:
+      context: ./notification-service
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - POSTGRES_USER=${POSTGRES_USER:-rapidalert_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      - NOTIFICATION_DB_HOST=notification-service-postgres
+      - KAFKA_BOOTSTRAP_SERVERS=broker:29092
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - notification-service-postgres
+      - discovery-server
+      - api-gateway
+      - zookeeper
+      - broker
+
+  sender:
+    build:
+      context: ./sender
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - KAFKA_BOOTSTRAP_SERVERS=broker:29092
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - zookeeper
+      - broker
+
+  file-service:
+    build:
+      context: ./file-service
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - api-gateway
+
+  telegram-bot-server:
+    build:
+      context: ./telegram-bot-server
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - BOT_NAME=${TELEGRAM_BOT_NAME:-RapidAlertBot}
+      - BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+
+  url-shortener:
+    build:
+      context: ./url-shortener
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - POSTGRES_USER=${POSTGRES_USER:-rapidalert_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-rapidalert_secure_password}
+      - SHORTENER_DB_HOST=shortener-service-postgres
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - shortener-service-postgres
+      - discovery-server
+      - api-gateway
+
+  rebalancer:
+    build:
+      context: ./rebalancer
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - KAFKA_BOOTSTRAP_SERVERS=broker:29092
+      - EUREKA_DEFAULT_ZONE=http://discovery-server:8761/eureka
+    depends_on:
+      - discovery-server
+      - zookeeper
+      - broker
+
+volumes:
+  db-postgres-security: { }
+  db-postgres-template: { }
+  db-postgres-recipient: { }
+  db-postgres-notification: { }
+  db-postgres-shortener: { }
