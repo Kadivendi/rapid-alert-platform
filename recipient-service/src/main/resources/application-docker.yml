@@ -1,0 +1,13 @@
+server:
+  port: 1004
+
+spring:
+  datasource:
+    url: jdbc:postgresql://recipient-service-postgres:5432/recipient
+  kafka:
+    bootstrap-servers: broker:29092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8761/eureka
