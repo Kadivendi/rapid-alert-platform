@@ -1,0 +1,24 @@
+spring:
+  # Default JDBC URL is the Testcontainers `tc://` form so a simple
+  # @SpringBootTest contextLoads gets an auto-spun Postgres. When ITBase
+  # starts its own PostgreSQLContainer it overrides spring.datasource.url
+  # via @DynamicPropertySource to the regular jdbc:postgresql://... form;
+  # we deliberately do NOT pin driver-class-name so auto-detect picks the
+  # right driver for whichever URL ends up active.
+  datasource:
+    url: jdbc:tc:postgresql:15-alpine:///security
+    username: test
+    password: test
+  jpa:
+    properties.hibernate:
+      ddl-auto: update
+    show-sql: false
+
+security:
+  jwt:
+    key: dGVzdC1qd3Qtc2lnbmluZy1rZXktbG9uZy1lbm91Z2gtZm9yLWhtYWMtc2hhMjU2LWFuZC1jZXJ0YWlubHktbW9yZS10aGFuLTMyLWJ5dGVz
+    prefix: 'Bearer '
+
+eureka:
+  client:
+    enabled: false
