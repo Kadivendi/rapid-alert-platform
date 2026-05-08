@@ -1,4 +1,4 @@
-package com.example.notification.dto.response;
+package com.rapidalert.notification.dto.response;
 
 import java.util.Map;
 

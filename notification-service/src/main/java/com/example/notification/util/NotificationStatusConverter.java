@@ -1,6 +1,6 @@
-package com.example.notification.util;
+package com.rapidalert.notification.util;
 
-import com.example.notification.model.NotificationStatus;
+import com.rapidalert.notification.model.NotificationStatus;
 import jakarta.persistence.Converter;
 
 @Converter(autoApply = true)

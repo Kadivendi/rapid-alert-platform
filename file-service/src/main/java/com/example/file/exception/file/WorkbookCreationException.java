@@ -1,4 +1,4 @@
-package com.example.file.exception.file;
+package com.rapidalert.file.exception.file;
 
 public class WorkbookCreationException extends RuntimeException {
 

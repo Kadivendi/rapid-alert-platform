@@ -1,4 +1,4 @@
-package com.example.template.dto.request;
+package com.rapidalert.template.dto.request;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

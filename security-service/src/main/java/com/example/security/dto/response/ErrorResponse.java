@@ -1,4 +1,4 @@
-package com.example.security.dto.response;
+package com.rapidalert.security.dto.response;
 
 import lombok.Builder;
 

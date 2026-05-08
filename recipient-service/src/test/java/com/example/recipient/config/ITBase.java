@@ -1,4 +1,4 @@
-package com.example.recipient.config;
+package com.rapidalert.recipient.config;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.test.context.DynamicPropertyRegistry;

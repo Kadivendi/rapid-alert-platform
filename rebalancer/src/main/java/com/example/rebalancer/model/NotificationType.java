@@ -1,4 +1,4 @@
-package com.example.rebalancer.model;
+package com.rapidalert.rebalancer.model;
 
 public enum NotificationType {
     EMAIL("EML"),

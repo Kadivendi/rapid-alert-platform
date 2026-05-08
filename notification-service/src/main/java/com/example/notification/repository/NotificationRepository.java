@@ -1,6 +1,6 @@
-package com.example.notification.repository;
+package com.rapidalert.notification.repository;
 
-import com.example.notification.entity.Notification;
+import com.rapidalert.notification.entity.Notification;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

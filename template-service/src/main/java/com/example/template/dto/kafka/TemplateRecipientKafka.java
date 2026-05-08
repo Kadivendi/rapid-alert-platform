@@ -1,4 +1,4 @@
-package com.example.template.dto.kafka;
+package com.rapidalert.template.dto.kafka;
 
 import lombok.Builder;
 

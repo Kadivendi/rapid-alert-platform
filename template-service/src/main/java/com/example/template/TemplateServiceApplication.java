@@ -1,4 +1,4 @@
-package com.example.template;
+package com.rapidalert.template;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

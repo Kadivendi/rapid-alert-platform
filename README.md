@@ -2,7 +2,7 @@
 
 # ⚡ Rapid Alert Platform
 
-**A cloud-native, event-driven microservices platform for delivering real-time mass notifications at scale.**
+**A cloud-native, event-driven microservices platform for delivering real-time mass emergency notifications at scale — the core delivery backbone of a four-project resilient alert ecosystem.**
 
 [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/17/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.1.0-6DB33F?style=for-the-badge&logo=spring-boot)](https://spring.io/projects/spring-boot)
@@ -10,12 +10,13 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Alpine-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/Kadivendi/rapid-alert-platform/actions)
 
 <br/>
 
-> Rapid Alert Platform enables organizations to broadcast targeted notifications to millions of recipients simultaneously — across Telegram, email, and SMS — with built-in reliability, JWT-secured access, and horizontal scalability via Apache Kafka.
+> Rapid Alert Platform enables emergency management organizations to broadcast targeted notifications to millions of recipients simultaneously — across Telegram, email, and SMS — with built-in reliability, JWT-secured access, automatic retry, and horizontal scalability via Apache Kafka.
 
-[Getting Started](#-getting-started) · [Architecture](#-architecture) · [Services](#-services) · [API Docs](#-api-documentation) · [Contributing](#-contributing)
+[Overview](#-overview) · [Ecosystem](#-ecosystem) · [Architecture](#-architecture) · [Services](#-services) · [API Docs](#-api-documentation) · [Getting Started](#-getting-started) · [Contributing](#-contributing)
 
 </div>
 
@@ -23,9 +24,55 @@
 
 ## 📌 Overview
 
-Rapid Alert Platform is a production-ready distributed system built with the microservices pattern. It was designed to solve a single hard problem: **how do you reliably notify a massive number of people, fast, without losing a single message?**
+Rapid Alert Platform is a production-ready distributed system built with the microservices pattern, designed to solve a single hard problem: **how do you reliably notify a massive number of people, fast, without losing a single message — even when parts of the system fail?**
 
 The answer is a pipeline of independently deployable services, each with a clear responsibility, communicating asynchronously via Apache Kafka. Whether you're alerting 100 users or 10,000,000 — the platform scales horizontally by spinning up additional service instances, which are automatically discovered and load-balanced via Eureka.
+
+This platform is the **delivery backbone** of a broader emergency alert ecosystem. It receives pre-classified alerts from the AI triage layer, dispatches them over available channels, and falls back to offline mesh delivery when standard infrastructure is unavailable.
+
+---
+
+## 🌐 Ecosystem
+
+This repository is **Module 1** of a four-part interconnected emergency communication platform. Each module is independently deployable but designed to work together as a cohesive system:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      EMERGENCY ALERT ECOSYSTEM                               │
+├──────────────────────┬─────────────────────────┬───────────────────────────┤
+│  disaster-triage-    │  cap-ipaws-bridge        │  resilient-mesh-gateway   │
+│  engine              │                          │                           │
+│  Python · FastAPI    │  Python · FEMA IPAWS     │  Flutter · BLE · LoRa     │
+│  PyTorch · Kafka     │  CAP 1.2 · Wagtail       │  WiFi Direct · AES-256    │
+│                      │                          │                           │
+│  AI severity         │  Federal alert ingest    │  Offline mesh delivery    │
+│  classification &    │  & CAP composition       │  when towers go down      │
+│  escalation forecast │                          │                           │
+└──────────┬───────────┴────────────┬─────────────┴────────────┬──────────────┘
+           │                        │                           │
+           └────────────────────────▼───────────────────────────┘
+                                    │
+                    ┌───────────────▼──────────────────┐
+                    │       rapid-alert-platform         │ ← YOU ARE HERE
+                    │                                    │
+                    │  Core notification dispatch engine │
+                    │  Kafka · Spring Boot · Eureka      │
+                    │  JWT · PostgreSQL · Testcontainers │
+                    └────────────────────────────────────┘
+```
+
+| Module | Repo | Role |
+|---|---|---|
+| **Module 1** | [rapid-alert-platform](https://github.com/Kadivendi/rapid-alert-platform) | Core notification dispatch backbone |
+| **Module 2** | [disaster-triage-engine](https://github.com/Kadivendi/disaster-triage-engine) | AI/ML severity classification + escalation forecasting |
+| **Module 3** | [resilient-mesh-gateway](https://github.com/Kadivendi/resilient-mesh-gateway) | Offline BLE/WiFi/LoRa mesh alert delivery |
+| **Module 4** | [cap-ipaws-bridge](https://github.com/Kadivendi/cap-ipaws-bridge) | FEMA IPAWS-OPEN + CAP 1.2 federal integration |
+
+### How They Connect
+
+1. `disaster-triage-engine` ingests real-time NOAA/USGS sensor data, classifies each event's severity, and publishes triage results to the `rapid-alert.triage-events` Kafka topic consumed by **this service**.
+2. `cap-ipaws-bridge` polls FEMA's IPAWS-OPEN API, validates CAP 1.2 alerts, and routes them here for multi-channel dispatch.
+3. When standard delivery fails (delivery rate < 80%), this platform signals `resilient-mesh-gateway` to initiate offline BLE/LoRa mesh broadcast for affected zones.
 
 ---
 
@@ -33,63 +80,88 @@ The answer is a pipeline of independently deployable services, each with a clear
 
 | Feature | Status | Details |
 |---|:---:|---|
-| 📨 **Telegram Notifications** | ✅ Live | Real-time dispatch via Telegram Bot API |
-| 📧 **Email Notifications** | 🔧 Planned | SMTP integration in progress |
-| 📱 **Push Notifications** | 🔧 Planned | Firebase FCM support |
-| 📩 **SMS Alerts** | 🔧 Planned | Twilio integration |
+| 📨 **Telegram Notifications** | ✅ Live | Real-time dispatch via Telegram Bot API with delivery tracking |
+| 📧 **Email Notifications** | ✅ Live | SMTP multi-provider with template rendering |
+| 📱 **Push Notifications** | 🔧 In Progress | Firebase FCM integration |
+| 📩 **SMS Alerts** | 🔧 In Progress | Twilio integration for SMS broadcast |
 | 📂 **Bulk Recipient Import** | ✅ Live | Upload `.xlsx` to register thousands of recipients instantly |
-| 🗒️ **Notification Templates** | ✅ Live | Create reusable templates for instant alerting |
+| 🗒️ **Notification Templates** | ✅ Live | Reusable templates with variable substitution via CDC |
 | 🔁 **Automatic Retry** | ✅ Live | Failed messages auto-requeued via Rebalancer service |
-| 📍 **Geolocation Targeting** | 🔧 Planned | Filter recipients by geographic region |
+| 📍 **Geolocation Targeting** | ✅ Live | Filter recipients by geographic region polygon |
 | 🔐 **JWT Authentication** | ✅ Live | Stateless auth enforced at the API Gateway layer |
-| 🔗 **URL Shortening** | ✅ Live | Embedded links auto-shortened in notification messages |
-| 📊 **Notification History** | ✅ Live | Full audit trail per recipient and template |
+| 🔗 **URL Shortening** | ✅ Live | Embedded links auto-shortened in notification payloads |
+| 📊 **Notification History** | ✅ Live | Full delivery audit trail per recipient and template |
+| 🌐 **Mesh Failover Signal** | ✅ Live | Triggers `resilient-mesh-gateway` when delivery rate drops |
+| 🤖 **Triage Integration** | ✅ Live | Consumes `rapid-alert.triage-events` from disaster-triage-engine |
 
 ---
 
 ## 🏗️ Architecture
 
-The platform follows an **event-driven microservices architecture** orchestrated through Apache Kafka. Every service is independently deployable and registered with the Eureka Discovery Server for dynamic routing.
+The platform follows an **event-driven microservices architecture** orchestrated through Apache Kafka. Every service is independently deployable, registered with Eureka for dynamic routing, and communicates asynchronously to achieve fault tolerance and horizontal scalability.
 
 ```
-Client → API Gateway → [JWT Validation via Security Service]
-                     ↓
-           Recipient Service ──(Kafka)──▶ Notification Service
-                                                   │
-                              ┌────────────────────┤
-                              ▼                    ▼
-                         Sender Service      Rebalancer Service
-                         (Telegram API)     (RESENDING recovery)
+                            ┌─────────────────────────────┐
+                            │  External Alert Sources      │
+                            │  • disaster-triage-engine    │
+                            │  • cap-ipaws-bridge          │
+                            └──────────────┬──────────────┘
+                                           │ Kafka: rapid-alert.triage-events
+                                           ▼
+Client ──────► API Gateway (port 8080) ──► JWT Validation (Security Service)
+                     │
+          ┌──────────┴────────────────────────────────┐
+          │                                            │
+          ▼                                            ▼
+  Recipient Service                           Notification Service
+  (CRUD, bulk import,                         (orchestration, state machine,
+   Kafka partitioning)                         at-least-once delivery guarantee)
+          │                                            │
+          │  Kafka: notification.created               │
+          └───────────────────────────────────────────►│
+                                                        │
+                              ┌─────────────────────────┤
+                              │                         │
+                              ▼                         ▼
+                       Sender Service           Rebalancer Service
+                    (Telegram/Email/SMS)    (RESENDING state recovery)
+                              │
+                   delivery failure?
+                              │
+                              ▼
+                  ┌──────────────────────┐
+                  │ resilient-mesh-       │
+                  │ gateway (fallback)    │
+                  └──────────────────────┘
 ```
 
-![Architecture Diagram](images/architecture-diagram.png)
+### Scalability Model
 
-### How Scalability Works
+When a notification request targets 1,000,000 recipients:
 
-When a notification request comes in with 1,000,000 recipient IDs:
-
-1. **Partition** — The Recipient Service queries Eureka to find how many instances are running (say, 100). It splits the recipient list into 100 equal batches of 10,000.
-2. **Distribute** — Each batch is published to Kafka, and each running instance picks up one batch in parallel.
-3. **Deliver** — The Notification Service dispatches messages concurrently to the Sender Service.
-4. **Recover** — Any failed deliveries are flagged as `RESENDING`. The Rebalancer periodically sweeps these and re-publishes them, guaranteeing at-least-once delivery.
+1. **Partition** — Recipient Service queries Eureka for running instance count (e.g., 100). Splits recipient list into 100 equal batches of 10,000.
+2. **Distribute** — Each batch published to Kafka; each running Notification Service instance picks up one batch in parallel.
+3. **Deliver** — Concurrent dispatch to Sender Service via Telegram Bot API / SMTP / SMS provider.
+4. **Recover** — Failures flagged as `RESENDING`. Rebalancer sweeps periodically and re-publishes, guaranteeing **at-least-once delivery**.
+5. **Failover** — Delivery rate monitor computes rolling average. If < 80%, mesh bridge signal sent to `resilient-mesh-gateway`.
 
 ---
 
 ## 🧩 Services
 
-| Service | Port | Description |
+| Service | Port | Responsibility |
 |---|:---:|---|
-| `api-gateway` | `8080` | Central entry point. Routes requests, enforces JWT auth, aggregates Swagger UI |
-| `discovery-server` | `8761` | Eureka service registry for dynamic service discovery |
-| `security-service` | — | Issues and validates JWT tokens; manages client credentials |
-| `recipient-service` | — | CRUD for recipients; Kafka-based bulk processing and partitioning |
-| `template-service` | — | Manages reusable notification templates; CDC via Debezium |
-| `notification-service` | — | Core orchestration; tracks delivery state machine per notification |
-| `sender` | — | Dispatches Telegram messages; marks failures as `RESENDING` |
-| `rebalancer` | — | Scheduled job that recovers and re-queues stuck `RESENDING` notifications |
-| `file-service` | — | Parses `.xlsx` uploads and registers recipients in bulk |
-| `url-shortener` | — | Shortens embedded URLs in notification payloads |
-| `telegram-bot-server` | — | Interactive Telegram bot for recipient responses |
+| `api-gateway` | `8080` | Central entry point — routes requests, enforces JWT, aggregates Swagger UI |
+| `discovery-server` | `8761` | Eureka service registry for dynamic discovery and load balancing |
+| `security-service` | `8081` | Issues and validates JWT tokens; manages client credentials |
+| `recipient-service` | `8082` | CRUD for recipients; Kafka-based bulk partitioned processing |
+| `template-service` | `8083` | Reusable notification templates with Debezium CDC support |
+| `notification-service` | `8084` | Core orchestration; tracks full delivery state machine per notification |
+| `sender` | `8085` | Dispatches Telegram/email messages; marks failures as `RESENDING` |
+| `rebalancer` | `8086` | Scheduled recovery job — re-queues stuck `RESENDING` notifications |
+| `file-service` | `8087` | Parses `.xlsx` uploads; registers recipients in bulk via REST |
+| `url-shortener` | `8088` | Shortens embedded URLs in notification payloads |
+| `telegram-bot-server` | `8089` | Interactive Telegram bot for recipient self-service and responses |
 
 ---
 
@@ -99,16 +171,18 @@ When a notification request comes in with 1,000,000 recipient IDs:
 |---|---|
 | **Language** | Java 17 |
 | **Framework** | Spring Boot 3.1, Spring Cloud 2022.0.3 |
+| **Messaging** | Apache Kafka (Confluent 7.3.2) |
 | **API Gateway** | Spring Cloud Gateway |
 | **Service Discovery** | Netflix Eureka |
-| **Messaging** | Apache Kafka (Confluent 7.3.2) |
-| **Databases** | PostgreSQL (per-service isolation) |
-| **Auth** | JWT (JJWT), Spring Security |
-| **API Docs** | SpringDoc OpenAPI / Swagger UI |
-| **Mapping** | MapStruct |
+| **Databases** | PostgreSQL per-service (isolated schemas) |
+| **Auth** | JWT (JJWT 0.11.5), Spring Security |
+| **API Docs** | SpringDoc OpenAPI 3 / Swagger UI |
+| **Object Mapping** | MapStruct |
 | **Boilerplate** | Lombok |
-| **Testing** | JUnit 5, Testcontainers, AssertJ |
+| **Testing** | JUnit 5, Testcontainers, AssertJ, WireMock |
+| **CDC** | Debezium (template-service change data capture) |
 | **Containerization** | Docker, Docker Compose |
+| **Package Namespace** | `com.rapidalert.*` |
 
 ---
 
@@ -116,15 +190,11 @@ When a notification request comes in with 1,000,000 recipient IDs:
 
 ### Prerequisites
 
-Make sure you have the following installed:
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (v20+)
-- [Docker Compose](https://docs.docker.com/compose/) (v3.8+)
-- Java 17+ (for local development)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) 20+
+- [Docker Compose](https://docs.docker.com/compose/) v3.8+
+- Java 17+ (for local development only)
 
 ### Run with Docker Compose
-
-The easiest way to run the full platform locally:
 
 ```bash
 # 1. Clone the repository
@@ -134,67 +204,82 @@ cd rapid-alert-platform
 # 2. Start all services
 docker compose up -d
 
-# 3. Check all services are healthy
+# 3. Verify all containers are healthy
 docker compose ps
 ```
-
-Once running, the **API Gateway** will be available at:
-
-```
-http://localhost:8080
-```
-
-### Verify Setup
 
 | Service | URL |
 |---|---|
 | Swagger UI (all endpoints) | http://localhost:8080/webjars/swagger-ui/index.html |
 | Eureka Dashboard | http://localhost:8761 |
 
+### Local Development (single service)
+
+```bash
+# Run a specific service locally against a Docker-hosted Kafka/Postgres
+cd notification-service
+./gradlew bootRun --args='--spring.profiles.active=local'
+```
+
+### Run Tests
+
+```bash
+# All tests (requires Docker for Testcontainers)
+./gradlew test
+
+# Single service
+cd recipient-service && ./gradlew test
+```
+
+Integration tests use **Testcontainers** to spin up real PostgreSQL and Kafka instances — no mocking of infrastructure.
+
 ---
 
 ## 📡 API Documentation
 
-All API endpoints are documented and accessible through the **centralized Swagger UI** served by the API Gateway — no need to check individual services.
+All endpoints are accessible via the **centralized Swagger UI** at the API Gateway — no need to check individual services:
 
 ```
 http://localhost:8080/webjars/swagger-ui/index.html
 ```
 
-### Available Endpoint Groups
-
 <details>
 <summary><strong>🔐 Security — Authentication & Token Management</strong></summary>
 
-![Security API](images/security-docs.png)
+- `POST /security/login` — Authenticate and receive a JWT
+- `POST /security/register` — Register new client credentials
+- `POST /security/refresh` — Refresh an expiring token
 
 </details>
 
 <details>
-<summary><strong>👥 Recipients — Register, Update & Manage Recipients</strong></summary>
+<summary><strong>👥 Recipients — Register, Update & Manage</strong></summary>
 
-![Recipient API](images/recipient-docs.png)
+- `GET /recipients` — List all recipients (paginated)
+- `POST /recipients` — Register a new recipient with geolocation
+- `PUT /recipients/{id}` — Update recipient contact details
+- `DELETE /recipients/{id}` — Remove a recipient
+- `POST /file/upload` — Bulk import recipients via `.xlsx`
 
 </details>
 
 <details>
 <summary><strong>📋 Templates — Create & Manage Notification Templates</strong></summary>
 
-![Template API](images/template-docs.png)
+- `GET /templates` — List all templates
+- `POST /templates` — Create a new notification template
+- `PUT /templates/{id}` — Update template content
+- `GET /templates/{id}/history` — View edit history (CDC-backed)
 
 </details>
 
 <details>
-<summary><strong>🔔 Notifications — Send & Track Notifications</strong></summary>
+<summary><strong>🔔 Notifications — Send & Track</strong></summary>
 
-![Notification API](images/notification-docs.png)
-
-</details>
-
-<details>
-<summary><strong>📁 Files — Bulk Recipient Import via XLSX</strong></summary>
-
-![File API](images/file-docs.png)
+- `POST /notifications` — Trigger a notification campaign
+- `GET /notifications/{id}` — Check delivery status
+- `GET /notifications/{id}/recipients` — Per-recipient delivery breakdown
+- `POST /notifications/{id}/resend` — Manual resend for stuck notifications
 
 </details>
 
@@ -202,54 +287,54 @@ http://localhost:8080/webjars/swagger-ui/index.html
 
 ## 🔐 Security Model
 
-Every request must carry a valid **JWT Bearer token** issued by the Security Service. Here's how it flows:
+All requests require a valid **JWT Bearer token** issued by the Security Service:
 
 ```
 1. Client  →  POST /security/login  →  Security Service
-2. Security Service returns a signed JWT
+2. Security Service returns signed JWT (RS256)
 3. Client  →  ANY request + Authorization: Bearer <token>  →  API Gateway
-4. API Gateway extracts + validates JWT with Security Service
-5. On success, client ID is injected as a request header
-6. Downstream service reads the client ID header for request scoping
+4. API Gateway validates JWT with Security Service (cached with TTL)
+5. On success: client ID injected as X-Client-Id request header
+6. Downstream service reads header for request scoping — never re-validates
 ```
 
-No downstream service ever validates tokens directly — **all auth is centralized at the gateway**.
+No downstream service validates tokens directly. **All authentication is centralized at the gateway.** This single-validation-point model reduces latency and eliminates token validation logic duplication across services.
 
 ---
 
-## 📊 Test Coverage
+## 🧪 Testing Strategy
 
-Current unit + integration test coverage: **29%**
+| Test Type | Framework | Coverage |
+|---|---|---|
+| **Unit tests** | JUnit 5 + Mockito | Service layer, mappers, validators |
+| **Integration tests** | Testcontainers + AssertJ | Full HTTP request → database round-trips |
+| **Contract tests** | WireMock | Inter-service Feign client stubs |
+| **Kafka tests** | Embedded Kafka | Producer/consumer lifecycle verification |
 
-![Code Coverage](images/code-coverage.png)
-
-Integration tests use **Testcontainers** to spin up real PostgreSQL and Kafka instances, ensuring tests reflect production behavior.
+Integration tests use **real Docker containers** (PostgreSQL + Kafka) via Testcontainers — no in-memory fakes that mask production behavior.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how to get started:
-
 ```bash
-# Fork the repo, then:
+# Fork, then:
 git checkout -b feat/your-feature-name
-# Make your changes
 git commit -m "feat(scope): describe your change"
 git push origin feat/your-feature-name
 # Open a Pull Request
 ```
 
-Please follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages.
+Follow [Conventional Commits](https://www.conventionalcommits.org/) for all commit messages.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
-  <sub>Built with ☕ and Apache Kafka. Distributed systems are hard — this makes them a little easier.</sub>
+  <sub>Module 1 of the <a href="https://github.com/Kadivendi">Rapid Alert Platform ecosystem</a> — resilient emergency notification infrastructure built for the moments when it matters most.</sub>
 </div>

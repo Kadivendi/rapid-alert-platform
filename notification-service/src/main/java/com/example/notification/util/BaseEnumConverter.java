@@ -1,6 +1,6 @@
-package com.example.notification.util;
+package com.rapidalert.notification.util;
 
-import com.example.notification.model.EnumeratedEntityField;
+import com.rapidalert.notification.model.EnumeratedEntityField;
 import jakarta.persistence.AttributeConverter;
 
 import java.util.stream.Stream;

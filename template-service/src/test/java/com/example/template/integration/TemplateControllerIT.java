@@ -1,12 +1,12 @@
-package com.example.template.integration;
+package com.rapidalert.template.integration;
 
-import com.example.template.ITBase;
-import com.example.template.builder.RecipientListJson;
-import com.example.template.builder.TemplateJson;
-import com.example.template.builder.TemplateJsonBuilder;
-import com.example.template.client.RecipientClient;
-import com.example.template.mocks.RecipientClientMock;
-import com.example.template.service.MessageSourceService;
+import com.rapidalert.template.ITBase;
+import com.rapidalert.template.builder.RecipientListJson;
+import com.rapidalert.template.builder.TemplateJson;
+import com.rapidalert.template.builder.TemplateJsonBuilder;
+import com.rapidalert.template.client.RecipientClient;
+import com.rapidalert.template.mocks.RecipientClientMock;
+import com.rapidalert.template.service.MessageSourceService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

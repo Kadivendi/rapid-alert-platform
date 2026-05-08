@@ -1,4 +1,4 @@
-package com.example.recipient.config;
+package com.rapidalert.recipient.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.RoundRobinPartitioner;

@@ -1,6 +1,6 @@
-package com.example.notification.client;
+package com.rapidalert.notification.client;
 
-import com.example.notification.dto.response.UrlsResponse;
+import com.rapidalert.notification.dto.response.UrlsResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

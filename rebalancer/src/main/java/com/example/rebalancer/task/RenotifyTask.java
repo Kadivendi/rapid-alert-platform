@@ -1,7 +1,7 @@
-package com.example.rebalancer.task;
+package com.rapidalert.rebalancer.task;
 
-import com.example.rebalancer.client.NotificationClient;
-import com.example.rebalancer.dto.kafka.NotificationKafka;
+import com.rapidalert.rebalancer.client.NotificationClient;
+import com.rapidalert.rebalancer.dto.kafka.NotificationKafka;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

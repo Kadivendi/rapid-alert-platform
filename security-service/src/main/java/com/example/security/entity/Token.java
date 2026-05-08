@@ -1,6 +1,6 @@
-package com.example.security.entity;
+package com.rapidalert.security.entity;
 
-import com.example.security.model.TokenType;
+import com.rapidalert.security.model.TokenType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

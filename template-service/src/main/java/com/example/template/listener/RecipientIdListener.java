@@ -1,8 +1,8 @@
-package com.example.template.listener;
+package com.rapidalert.template.listener;
 
-import com.example.template.dto.kafka.Operation;
-import com.example.template.dto.kafka.TemplateRecipientKafka;
-import com.example.template.entity.RecipientId;
+import com.rapidalert.template.dto.kafka.Operation;
+import com.rapidalert.template.dto.kafka.TemplateRecipientKafka;
+import com.rapidalert.template.entity.RecipientId;
 import jakarta.persistence.PostPersist;
 import jakarta.persistence.PostRemove;
 import lombok.RequiredArgsConstructor;

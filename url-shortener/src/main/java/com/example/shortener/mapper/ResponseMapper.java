@@ -1,7 +1,7 @@
-package com.example.shortener.mapper;
+package com.rapidalert.shortener.mapper;
 
-import com.example.shortener.entity.Response;
-import com.example.shortener.dto.request.NotificationOptionsRequest;
+import com.rapidalert.shortener.entity.Response;
+import com.rapidalert.shortener.dto.request.NotificationOptionsRequest;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

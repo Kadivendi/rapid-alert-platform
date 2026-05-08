@@ -1,4 +1,4 @@
-package com.example.recipient.dto.request;
+package com.rapidalert.recipient.dto.request;
 
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;

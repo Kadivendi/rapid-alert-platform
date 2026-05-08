@@ -1,4 +1,4 @@
-package com.example.security.enums;
+package com.rapidalert.security.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

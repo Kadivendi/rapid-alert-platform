@@ -1,4 +1,4 @@
-package com.example.notification.util;
+package com.rapidalert.notification.util;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.client.discovery.DiscoveryClient;

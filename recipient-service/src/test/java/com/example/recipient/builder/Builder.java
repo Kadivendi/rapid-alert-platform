@@ -1,4 +1,4 @@
-package com.example.recipient.builder;
+package com.rapidalert.recipient.builder;
 
 public abstract class Builder<T> {
 

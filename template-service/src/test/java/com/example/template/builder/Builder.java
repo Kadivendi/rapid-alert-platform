@@ -1,4 +1,4 @@
-package com.example.template.builder;
+package com.rapidalert.template.builder;
 
 public abstract class Builder<T> {
 

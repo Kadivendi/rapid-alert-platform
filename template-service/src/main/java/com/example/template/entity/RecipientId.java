@@ -1,6 +1,6 @@
-package com.example.template.entity;
+package com.rapidalert.template.entity;
 
-import com.example.template.listener.RecipientIdListener;
+import com.rapidalert.template.listener.RecipientIdListener;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

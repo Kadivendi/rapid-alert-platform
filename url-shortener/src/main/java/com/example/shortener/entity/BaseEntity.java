@@ -1,4 +1,4 @@
-package com.example.shortener.entity;
+package com.rapidalert.shortener.entity;
 
 import java.io.Serializable;
 

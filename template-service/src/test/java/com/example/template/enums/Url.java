@@ -1,4 +1,4 @@
-package com.example.template.enums;
+package com.rapidalert.template.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

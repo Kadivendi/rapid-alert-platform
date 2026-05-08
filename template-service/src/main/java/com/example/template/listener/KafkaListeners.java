@@ -1,9 +1,9 @@
-package com.example.template.listener;
+package com.rapidalert.template.listener;
 
-import com.example.template.dto.kafka.TemplateRecipientKafka;
-import com.example.template.mapper.RecipientIdMapper;
-import com.example.template.repository.RecipientIdRepository;
-import com.example.template.repository.TemplateRepository;
+import com.rapidalert.template.dto.kafka.TemplateRecipientKafka;
+import com.rapidalert.template.mapper.RecipientIdMapper;
+import com.rapidalert.template.repository.RecipientIdRepository;
+import com.rapidalert.template.repository.TemplateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;

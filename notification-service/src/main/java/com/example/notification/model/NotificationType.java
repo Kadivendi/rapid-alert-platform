@@ -1,4 +1,4 @@
-package com.example.notification.model;
+package com.rapidalert.notification.model;
 
 public enum NotificationType implements EnumeratedEntityField {
     EMAIL("EML"),

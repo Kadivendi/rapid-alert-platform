@@ -1,13 +1,13 @@
-package com.example.template.service;
+package com.rapidalert.template.service;
 
-import com.example.template.dto.response.TemplateHistoryResponse;
-import com.example.template.entity.Template;
-import com.example.template.entity.TemplateHistory;
-import com.example.template.exception.history.HistoryNotFoundException;
-import com.example.template.exception.template.TemplateNotFoundException;
-import com.example.template.mapper.TemplateMapper;
-import com.example.template.repository.TemplateHistoryRepository;
-import com.example.template.repository.TemplateRepository;
+import com.rapidalert.template.dto.response.TemplateHistoryResponse;
+import com.rapidalert.template.entity.Template;
+import com.rapidalert.template.entity.TemplateHistory;
+import com.rapidalert.template.exception.history.HistoryNotFoundException;
+import com.rapidalert.template.exception.template.TemplateNotFoundException;
+import com.rapidalert.template.mapper.TemplateMapper;
+import com.rapidalert.template.repository.TemplateHistoryRepository;
+import com.rapidalert.template.repository.TemplateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

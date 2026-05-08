@@ -1,4 +1,4 @@
-package com.example.template.builder;
+package com.rapidalert.template.builder;
 
 public class TemplateJsonBuilder extends Builder<TemplateJson> {
 

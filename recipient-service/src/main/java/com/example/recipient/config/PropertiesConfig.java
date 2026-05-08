@@ -1,4 +1,4 @@
-package com.example.recipient.config;
+package com.rapidalert.recipient.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

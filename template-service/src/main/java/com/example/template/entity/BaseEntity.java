@@ -1,4 +1,4 @@
-package com.example.template.entity;
+package com.rapidalert.template.entity;
 
 import java.io.Serializable;
 

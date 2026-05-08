@@ -1,4 +1,4 @@
-package com.example.sender;
+package com.rapidalert.sender;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

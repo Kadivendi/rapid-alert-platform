@@ -1,8 +1,8 @@
-package com.example.shortener.controller;
+package com.rapidalert.shortener.controller;
 
-import com.example.shortener.dto.response.UrlsResponse;
-import com.example.shortener.dto.request.NotificationOptionsRequest;
-import com.example.shortener.service.ResponseService;
+import com.rapidalert.shortener.dto.response.UrlsResponse;
+import com.rapidalert.shortener.dto.request.NotificationOptionsRequest;
+import com.rapidalert.shortener.service.ResponseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

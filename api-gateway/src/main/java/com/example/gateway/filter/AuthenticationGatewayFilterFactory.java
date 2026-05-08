@@ -1,4 +1,4 @@
-package com.example.gateway.filter;
+package com.rapidalert.gateway.filter;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilter;

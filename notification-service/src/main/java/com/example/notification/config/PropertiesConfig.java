@@ -1,4 +1,4 @@
-package com.example.notification.config;
+package com.rapidalert.notification.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

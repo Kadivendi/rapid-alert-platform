@@ -1,11 +1,11 @@
-package com.example.template.exception;
+package com.rapidalert.template.exception;
 
-import com.example.template.dto.response.ErrorResponse;
-import com.example.template.exception.history.HistoryCreationException;
-import com.example.template.exception.history.HistoryNotFoundException;
-import com.example.template.exception.template.TemplateCreationException;
-import com.example.template.exception.template.TemplateNotFoundException;
-import com.example.template.exception.template.TemplateTitleAlreadyExistsException;
+import com.rapidalert.template.dto.response.ErrorResponse;
+import com.rapidalert.template.exception.history.HistoryCreationException;
+import com.rapidalert.template.exception.history.HistoryNotFoundException;
+import com.rapidalert.template.exception.template.TemplateCreationException;
+import com.rapidalert.template.exception.template.TemplateNotFoundException;
+import com.rapidalert.template.exception.template.TemplateTitleAlreadyExistsException;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

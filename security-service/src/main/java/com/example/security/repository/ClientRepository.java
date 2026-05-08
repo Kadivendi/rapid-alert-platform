@@ -1,6 +1,6 @@
-package com.example.security.repository;
+package com.rapidalert.security.repository;
 
-import com.example.security.entity.Client;
+import com.rapidalert.security.entity.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.notification.exception.notification;
+package com.rapidalert.notification.exception.notification;
 
 import jakarta.persistence.EntityNotFoundException;
 

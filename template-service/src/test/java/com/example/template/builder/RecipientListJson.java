@@ -1,4 +1,4 @@
-package com.example.template.builder;
+package com.rapidalert.template.builder;
 
 import org.springframework.util.StringUtils;
 

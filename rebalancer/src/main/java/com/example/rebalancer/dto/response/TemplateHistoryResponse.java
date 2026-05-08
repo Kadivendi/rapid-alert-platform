@@ -1,4 +1,4 @@
-package com.example.rebalancer.dto.response;
+package com.rapidalert.rebalancer.dto.response;
 
 public record TemplateHistoryResponse(
         Long id,

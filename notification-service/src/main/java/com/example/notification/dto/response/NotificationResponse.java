@@ -1,7 +1,7 @@
-package com.example.notification.dto.response;
+package com.rapidalert.notification.dto.response;
 
-import com.example.notification.model.NotificationStatus;
-import com.example.notification.model.NotificationType;
+import com.rapidalert.notification.model.NotificationStatus;
+import com.rapidalert.notification.model.NotificationType;
 import lombok.Builder;
 
 import java.time.LocalDateTime;

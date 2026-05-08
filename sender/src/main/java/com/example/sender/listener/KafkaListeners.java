@@ -1,9 +1,9 @@
-package com.example.sender.listener;
+package com.rapidalert.sender.listener;
 
-import com.example.sender.client.NotificationClient;
-import com.example.sender.dto.kafka.NotificationKafka;
-import com.example.sender.dto.response.TemplateHistoryResponse;
-import com.example.sender.service.telegram.TelegramAlertService;
+import com.rapidalert.sender.client.NotificationClient;
+import com.rapidalert.sender.dto.kafka.NotificationKafka;
+import com.rapidalert.sender.dto.response.TemplateHistoryResponse;
+import com.rapidalert.sender.service.telegram.TelegramAlertService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

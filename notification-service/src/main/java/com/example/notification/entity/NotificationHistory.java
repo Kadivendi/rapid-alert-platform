@@ -1,7 +1,7 @@
-package com.example.notification.entity;
+package com.rapidalert.notification.entity;
 
-import com.example.notification.model.NotificationStatus;
-import com.example.notification.model.NotificationType;
+import com.rapidalert.notification.model.NotificationStatus;
+import com.rapidalert.notification.model.NotificationType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.example.notification.mapper;
+package com.rapidalert.notification.mapper;
 
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

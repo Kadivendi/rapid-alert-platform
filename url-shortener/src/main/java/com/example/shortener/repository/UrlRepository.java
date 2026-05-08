@@ -1,6 +1,6 @@
-package com.example.shortener.repository;
+package com.rapidalert.shortener.repository;
 
-import com.example.shortener.entity.Url;
+import com.rapidalert.shortener.entity.Url;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

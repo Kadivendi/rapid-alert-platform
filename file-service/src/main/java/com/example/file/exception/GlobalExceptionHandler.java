@@ -1,10 +1,10 @@
-package com.example.file.exception;
+package com.rapidalert.file.exception;
 
-import com.example.file.dto.response.ErrorResponse;
-import com.example.file.exception.file.BulkRecipientDownloadException;
-import com.example.file.exception.file.BulkRecipientRegistrationException;
-import com.example.file.exception.file.InvalidFileFormatException;
-import com.example.file.exception.file.WorkbookCreationException;
+import com.rapidalert.file.dto.response.ErrorResponse;
+import com.rapidalert.file.exception.file.BulkRecipientDownloadException;
+import com.rapidalert.file.exception.file.BulkRecipientRegistrationException;
+import com.rapidalert.file.exception.file.InvalidFileFormatException;
+import com.rapidalert.file.exception.file.WorkbookCreationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

@@ -1,4 +1,4 @@
-package com.example.security.entity;
+package com.rapidalert.security.entity;
 
 import java.io.Serializable;
 

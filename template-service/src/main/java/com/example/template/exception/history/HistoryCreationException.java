@@ -1,4 +1,4 @@
-package com.example.template.exception.history;
+package com.rapidalert.template.exception.history;
 
 public class HistoryCreationException extends RuntimeException {
 

@@ -1,9 +1,9 @@
-package com.example.security.controller;
+package com.rapidalert.security.controller;
 
-import com.example.security.dto.request.SecurityRequest;
-import com.example.security.dto.response.TokenResponse;
-import com.example.security.entity.Client;
-import com.example.security.service.ClientService;
+import com.rapidalert.security.dto.request.SecurityRequest;
+import com.rapidalert.security.dto.response.TokenResponse;
+import com.rapidalert.security.entity.Client;
+import com.rapidalert.security.service.ClientService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

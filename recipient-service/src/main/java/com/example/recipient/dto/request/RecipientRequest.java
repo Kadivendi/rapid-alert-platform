@@ -1,4 +1,4 @@
-package com.example.recipient.dto.request;
+package com.rapidalert.recipient.dto.request;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;

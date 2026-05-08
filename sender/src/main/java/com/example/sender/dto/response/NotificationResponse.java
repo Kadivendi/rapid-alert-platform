@@ -1,7 +1,7 @@
-package com.example.sender.dto.response;
+package com.rapidalert.sender.dto.response;
 
-import com.example.sender.model.NotificationStatus;
-import com.example.sender.model.NotificationType;
+import com.rapidalert.sender.model.NotificationStatus;
+import com.rapidalert.sender.model.NotificationType;
 
 import java.time.LocalDateTime;
 

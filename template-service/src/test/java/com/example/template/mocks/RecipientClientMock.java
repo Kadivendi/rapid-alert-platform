@@ -1,7 +1,7 @@
-package com.example.template.mocks;
+package com.rapidalert.template.mocks;
 
-import com.example.template.client.RecipientClient;
-import com.example.template.dto.response.RecipientResponse;
+import com.rapidalert.template.client.RecipientClient;
+import com.rapidalert.template.dto.response.RecipientResponse;
 import feign.FeignException;
 import org.springframework.http.ResponseEntity;
 

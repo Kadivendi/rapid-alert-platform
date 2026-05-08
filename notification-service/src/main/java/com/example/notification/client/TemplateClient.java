@@ -1,7 +1,7 @@
-package com.example.notification.client;
+package com.rapidalert.notification.client;
 
-import com.example.notification.dto.response.TemplateHistoryResponse;
-import com.example.notification.dto.response.TemplateResponse;
+import com.rapidalert.notification.dto.response.TemplateHistoryResponse;
+import com.rapidalert.notification.dto.response.TemplateResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

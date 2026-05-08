@@ -1,4 +1,4 @@
-package com.example.rebalancer.config;
+package com.rapidalert.rebalancer.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.RoundRobinPartitioner;

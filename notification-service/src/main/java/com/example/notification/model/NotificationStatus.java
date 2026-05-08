@@ -1,4 +1,4 @@
-package com.example.notification.model;
+package com.rapidalert.notification.model;
 
 public enum NotificationStatus implements EnumeratedEntityField {
     NEW("N"),       // has just been created

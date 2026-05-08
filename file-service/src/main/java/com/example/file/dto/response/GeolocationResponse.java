@@ -1,4 +1,4 @@
-package com.example.file.dto.response;
+package com.rapidalert.file.dto.response;
 
 import lombok.Builder;
 

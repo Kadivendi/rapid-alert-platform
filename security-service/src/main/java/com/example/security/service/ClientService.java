@@ -1,13 +1,13 @@
-package com.example.security.service;
+package com.rapidalert.security.service;
 
-import com.example.security.dto.request.SecurityRequest;
-import com.example.security.dto.response.TokenResponse;
-import com.example.security.entity.Client;
-import com.example.security.exception.client.ClientBadCredentialsException;
-import com.example.security.exception.client.ClientEmailAlreadyExistsException;
-import com.example.security.exception.client.ClientNotFoundException;
-import com.example.security.mapper.ClientMapper;
-import com.example.security.repository.ClientRepository;
+import com.rapidalert.security.dto.request.SecurityRequest;
+import com.rapidalert.security.dto.response.TokenResponse;
+import com.rapidalert.security.entity.Client;
+import com.rapidalert.security.exception.client.ClientBadCredentialsException;
+import com.rapidalert.security.exception.client.ClientEmailAlreadyExistsException;
+import com.rapidalert.security.exception.client.ClientNotFoundException;
+import com.rapidalert.security.mapper.ClientMapper;
+import com.rapidalert.security.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

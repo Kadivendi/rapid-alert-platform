@@ -1,4 +1,4 @@
-package com.example.rebalancer.model;
+package com.rapidalert.rebalancer.model;
 
 public enum NotificationStatus {
     NEW("N"),       // has just been created

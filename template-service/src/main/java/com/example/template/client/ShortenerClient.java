@@ -1,6 +1,6 @@
-package com.example.template.client;
+package com.rapidalert.template.client;
 
-import com.example.template.dto.request.NotificationOptionsRequest;
+import com.rapidalert.template.dto.request.NotificationOptionsRequest;
 import jakarta.validation.Valid;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

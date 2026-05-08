@@ -1,4 +1,4 @@
-package com.example.security.service;
+package com.rapidalert.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

@@ -1,12 +1,12 @@
-package com.example.shortener.service;
+package com.rapidalert.shortener.service;
 
-import com.example.shortener.dto.response.UrlsResponse;
-import com.example.shortener.entity.Response;
-import com.example.shortener.entity.Url;
-import com.example.shortener.mapper.ResponseMapper;
-import com.example.shortener.dto.request.NotificationOptionsRequest;
-import com.example.shortener.repository.ResponseRepository;
-import com.example.shortener.repository.UrlRepository;
+import com.rapidalert.shortener.dto.response.UrlsResponse;
+import com.rapidalert.shortener.entity.Response;
+import com.rapidalert.shortener.entity.Url;
+import com.rapidalert.shortener.mapper.ResponseMapper;
+import com.rapidalert.shortener.dto.request.NotificationOptionsRequest;
+import com.rapidalert.shortener.repository.ResponseRepository;
+import com.rapidalert.shortener.repository.UrlRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

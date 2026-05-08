@@ -1,6 +1,6 @@
-package com.example.rebalancer.client;
+package com.rapidalert.rebalancer.client;
 
-import com.example.rebalancer.dto.kafka.NotificationKafka;
+import com.rapidalert.rebalancer.dto.kafka.NotificationKafka;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

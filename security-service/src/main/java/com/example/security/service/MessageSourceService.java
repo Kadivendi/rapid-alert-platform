@@ -1,4 +1,4 @@
-package com.example.security.service;
+package com.rapidalert.security.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;

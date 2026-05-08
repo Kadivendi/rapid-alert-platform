@@ -1,4 +1,4 @@
-package com.example.template.config;
+package com.rapidalert.template.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

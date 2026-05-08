@@ -1,4 +1,4 @@
-package com.example.notification.entity;
+package com.rapidalert.notification.entity;
 
 import java.io.Serializable;
 

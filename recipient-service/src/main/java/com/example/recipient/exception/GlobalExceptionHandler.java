@@ -1,8 +1,8 @@
-package com.example.recipient.exception;
+package com.rapidalert.recipient.exception;
 
-import com.example.recipient.dto.response.ErrorResponse;
-import com.example.recipient.exception.recipient.RecipientNotFoundException;
-import com.example.recipient.exception.recipient.RecipientRegistrationException;
+import com.rapidalert.recipient.dto.response.ErrorResponse;
+import com.rapidalert.recipient.exception.recipient.RecipientNotFoundException;
+import com.rapidalert.recipient.exception.recipient.RecipientRegistrationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

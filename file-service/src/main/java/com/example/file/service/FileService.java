@@ -1,13 +1,13 @@
-package com.example.file.service;
+package com.rapidalert.file.service;
 
-import com.example.file.client.RecipientClient;
-import com.example.file.dto.request.GeolocationRequest;
-import com.example.file.dto.request.RecipientRequest;
-import com.example.file.dto.response.GeolocationResponse;
-import com.example.file.dto.response.RecipientResponse;
-import com.example.file.exception.file.BulkRecipientDownloadException;
-import com.example.file.exception.file.BulkRecipientRegistrationException;
-import com.example.file.exception.file.WorkbookCreationException;
+import com.rapidalert.file.client.RecipientClient;
+import com.rapidalert.file.dto.request.GeolocationRequest;
+import com.rapidalert.file.dto.request.RecipientRequest;
+import com.rapidalert.file.dto.response.GeolocationResponse;
+import com.rapidalert.file.dto.response.RecipientResponse;
+import com.rapidalert.file.exception.file.BulkRecipientDownloadException;
+import com.rapidalert.file.exception.file.BulkRecipientRegistrationException;
+import com.rapidalert.file.exception.file.WorkbookCreationException;
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

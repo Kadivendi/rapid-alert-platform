@@ -1,4 +1,4 @@
-package com.example.rebalancer;
+package com.rapidalert.rebalancer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

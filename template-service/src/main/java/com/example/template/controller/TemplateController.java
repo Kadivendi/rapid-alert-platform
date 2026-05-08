@@ -1,8 +1,8 @@
-package com.example.template.controller;
+package com.rapidalert.template.controller;
 
-import com.example.template.dto.request.TemplateRequest;
-import com.example.template.dto.response.TemplateResponse;
-import com.example.template.service.TemplateService;
+import com.rapidalert.template.dto.request.TemplateRequest;
+import com.rapidalert.template.dto.response.TemplateResponse;
+import com.rapidalert.template.service.TemplateService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

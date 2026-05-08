@@ -1,9 +1,9 @@
-package com.example.rebalancer.dto.kafka;
+package com.rapidalert.rebalancer.dto.kafka;
 
 
-import com.example.rebalancer.dto.response.TemplateHistoryResponse;
-import com.example.rebalancer.model.NotificationStatus;
-import com.example.rebalancer.model.NotificationType;
+import com.rapidalert.rebalancer.dto.response.TemplateHistoryResponse;
+import com.rapidalert.rebalancer.model.NotificationStatus;
+import com.rapidalert.rebalancer.model.NotificationType;
 
 import java.time.LocalDateTime;
 import java.util.Map;

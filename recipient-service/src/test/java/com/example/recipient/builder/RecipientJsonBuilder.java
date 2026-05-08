@@ -1,4 +1,4 @@
-package com.example.recipient.builder;
+package com.rapidalert.recipient.builder;
 
 public class RecipientJsonBuilder extends Builder<RecipientJson> {
 

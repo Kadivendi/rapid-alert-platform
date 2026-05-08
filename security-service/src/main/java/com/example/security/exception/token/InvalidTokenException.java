@@ -1,4 +1,4 @@
-package com.example.security.exception.token;
+package com.rapidalert.security.exception.token;
 
 import io.jsonwebtoken.JwtException;
 

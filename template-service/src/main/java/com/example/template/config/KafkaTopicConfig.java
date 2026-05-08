@@ -1,4 +1,4 @@
-package com.example.template.config;
+package com.rapidalert.template.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;

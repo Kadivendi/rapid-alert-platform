@@ -1,6 +1,6 @@
-package com.example.notification.dto.kafka;
+package com.rapidalert.notification.dto.kafka;
 
-import com.example.notification.dto.response.TemplateHistoryResponse;
+import com.rapidalert.notification.dto.response.TemplateHistoryResponse;
 
 import java.util.List;
 

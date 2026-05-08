@@ -1,4 +1,4 @@
-package com.example.template.mapper;
+package com.rapidalert.template.mapper;
 
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

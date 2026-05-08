@@ -1,14 +1,14 @@
-package com.example.recipient.service;
+package com.rapidalert.recipient.service;
 
-import com.example.recipient.dto.request.RecipientRequest;
-import com.example.recipient.dto.response.RecipientResponse;
-import com.example.recipient.entity.Recipient;
-import com.example.recipient.entity.TemplateId;
-import com.example.recipient.exception.recipient.RecipientNotFoundException;
-import com.example.recipient.exception.recipient.RecipientRegistrationException;
-import com.example.recipient.mapper.RecipientMapper;
-import com.example.recipient.repository.RecipientRepository;
-import com.example.recipient.repository.TemplateIdRepository;
+import com.rapidalert.recipient.dto.request.RecipientRequest;
+import com.rapidalert.recipient.dto.response.RecipientResponse;
+import com.rapidalert.recipient.entity.Recipient;
+import com.rapidalert.recipient.entity.TemplateId;
+import com.rapidalert.recipient.exception.recipient.RecipientNotFoundException;
+import com.rapidalert.recipient.exception.recipient.RecipientRegistrationException;
+import com.rapidalert.recipient.mapper.RecipientMapper;
+import com.rapidalert.recipient.repository.RecipientRepository;
+import com.rapidalert.recipient.repository.TemplateIdRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;

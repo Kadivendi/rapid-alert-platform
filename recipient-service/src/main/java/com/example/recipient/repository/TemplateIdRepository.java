@@ -1,6 +1,6 @@
-package com.example.recipient.repository;
+package com.rapidalert.recipient.repository;
 
-import com.example.recipient.entity.TemplateId;
+import com.rapidalert.recipient.entity.TemplateId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

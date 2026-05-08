@@ -1,4 +1,4 @@
-package com.example.template.service;
+package com.rapidalert.template.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;

@@ -1,4 +1,4 @@
-package com.example.shortener.dto.response;
+package com.rapidalert.shortener.dto.response;
 
 import java.util.Map;
 

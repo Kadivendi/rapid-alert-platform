@@ -1,8 +1,8 @@
-package com.example.recipient.controller;
+package com.rapidalert.recipient.controller;
 
-import com.example.recipient.dto.request.RecipientRequest;
-import com.example.recipient.dto.response.RecipientResponse;
-import com.example.recipient.service.RecipientService;
+import com.rapidalert.recipient.dto.request.RecipientRequest;
+import com.rapidalert.recipient.dto.response.RecipientResponse;
+import com.rapidalert.recipient.service.RecipientService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

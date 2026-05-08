@@ -1,7 +1,7 @@
-package com.example.template.controller;
+package com.rapidalert.template.controller;
 
-import com.example.template.dto.response.TemplateHistoryResponse;
-import com.example.template.service.TemplateHistoryService;
+import com.rapidalert.template.dto.response.TemplateHistoryResponse;
+import com.rapidalert.template.service.TemplateHistoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

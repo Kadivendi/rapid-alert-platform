@@ -1,9 +1,9 @@
-package com.example.security.config;
+package com.rapidalert.security.config;
 
-import com.example.security.exception.client.ClientNotFoundException;
-import com.example.security.filter.JwtAuthenticationFilter;
-import com.example.security.repository.ClientRepository;
-import com.example.security.service.MessageSourceService;
+import com.rapidalert.security.exception.client.ClientNotFoundException;
+import com.rapidalert.security.filter.JwtAuthenticationFilter;
+import com.rapidalert.security.repository.ClientRepository;
+import com.rapidalert.security.service.MessageSourceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

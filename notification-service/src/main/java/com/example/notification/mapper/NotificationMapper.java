@@ -1,13 +1,13 @@
-package com.example.notification.mapper;
+package com.rapidalert.notification.mapper;
 
-import com.example.notification.client.ShortenerClient;
-import com.example.notification.client.TemplateClient;
-import com.example.notification.dto.kafka.NotificationKafka;
-import com.example.notification.dto.request.NotificationRequest;
-import com.example.notification.dto.response.NotificationHistoryResponse;
-import com.example.notification.dto.response.NotificationResponse;
-import com.example.notification.entity.Notification;
-import com.example.notification.entity.NotificationHistory;
+import com.rapidalert.notification.client.ShortenerClient;
+import com.rapidalert.notification.client.TemplateClient;
+import com.rapidalert.notification.dto.kafka.NotificationKafka;
+import com.rapidalert.notification.dto.request.NotificationRequest;
+import com.rapidalert.notification.dto.response.NotificationHistoryResponse;
+import com.rapidalert.notification.dto.response.NotificationResponse;
+import com.rapidalert.notification.entity.Notification;
+import com.rapidalert.notification.entity.NotificationHistory;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,7 +1,7 @@
-package com.example.file.client;
+package com.rapidalert.file.client;
 
-import com.example.file.dto.request.RecipientRequest;
-import com.example.file.dto.response.RecipientResponse;
+import com.rapidalert.file.dto.request.RecipientRequest;
+import com.rapidalert.file.dto.response.RecipientResponse;
 import jakarta.validation.Valid;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

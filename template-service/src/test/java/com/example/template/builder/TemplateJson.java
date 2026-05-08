@@ -1,4 +1,4 @@
-package com.example.template.builder;
+package com.rapidalert.template.builder;
 
 public record TemplateJson(
         String title,

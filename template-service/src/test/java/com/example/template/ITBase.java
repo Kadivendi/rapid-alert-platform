@@ -1,4 +1,4 @@
-package com.example.template;
+package com.rapidalert.template;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

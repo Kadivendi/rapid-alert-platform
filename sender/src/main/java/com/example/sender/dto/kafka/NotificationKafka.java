@@ -1,8 +1,8 @@
-package com.example.sender.dto.kafka;
+package com.rapidalert.sender.dto.kafka;
 
-import com.example.sender.dto.response.TemplateHistoryResponse;
-import com.example.sender.model.NotificationStatus;
-import com.example.sender.model.NotificationType;
+import com.rapidalert.sender.dto.response.TemplateHistoryResponse;
+import com.rapidalert.sender.model.NotificationStatus;
+import com.rapidalert.sender.model.NotificationType;
 
 import java.util.Map;
 

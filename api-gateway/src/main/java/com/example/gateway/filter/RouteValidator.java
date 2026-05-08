@@ -1,4 +1,4 @@
-package com.example.gateway.filter;
+package com.rapidalert.gateway.filter;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;

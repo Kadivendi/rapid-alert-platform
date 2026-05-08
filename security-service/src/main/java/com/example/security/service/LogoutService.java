@@ -1,6 +1,6 @@
-package com.example.security.service;
+package com.rapidalert.security.service;
 
-import com.example.security.entity.Client;
+import com.rapidalert.security.entity.Client;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

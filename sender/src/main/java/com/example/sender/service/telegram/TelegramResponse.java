@@ -1,4 +1,4 @@
-package com.example.sender.service.telegram;
+package com.rapidalert.sender.service.telegram;
 
 public record TelegramResponse(
         boolean ok

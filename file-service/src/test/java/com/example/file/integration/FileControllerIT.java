@@ -1,6 +1,6 @@
-package com.example.file.integration;
+package com.rapidalert.file.integration;
 
-import com.example.file.config.IT;
+import com.rapidalert.file.config.IT;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;

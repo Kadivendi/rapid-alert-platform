@@ -1,8 +1,8 @@
-package com.example.security.mapper;
+package com.rapidalert.security.mapper;
 
-import com.example.security.dto.request.SecurityRequest;
-import com.example.security.entity.Client;
-import com.example.security.model.Role;
+import com.rapidalert.security.dto.request.SecurityRequest;
+import com.rapidalert.security.entity.Client;
+import com.rapidalert.security.model.Role;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

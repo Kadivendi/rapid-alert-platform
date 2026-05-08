@@ -1,6 +1,6 @@
-package com.example.sender.service.telegram;
+package com.rapidalert.sender.service.telegram;
 
-import com.example.sender.dto.response.TemplateHistoryResponse;
+import com.rapidalert.sender.dto.response.TemplateHistoryResponse;
 import feign.FeignException.BadRequest;
 import feign.FeignException.Forbidden;
 import feign.FeignException.TooManyRequests;

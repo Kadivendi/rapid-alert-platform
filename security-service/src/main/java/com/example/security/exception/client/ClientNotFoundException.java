@@ -1,4 +1,4 @@
-package com.example.security.exception.client;
+package com.rapidalert.security.exception.client;
 
 import jakarta.persistence.EntityNotFoundException;
 

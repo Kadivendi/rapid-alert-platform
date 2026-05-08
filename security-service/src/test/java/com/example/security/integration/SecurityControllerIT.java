@@ -1,9 +1,9 @@
-package com.example.security.integration;
+package com.rapidalert.security.integration;
 
-import com.example.security.ITBase;
-import com.example.security.builder.AuthenticationJson;
-import com.example.security.builder.AuthenticationJsonBuilder;
-import com.example.security.service.MessageSourceService;
+import com.rapidalert.security.ITBase;
+import com.rapidalert.security.builder.AuthenticationJson;
+import com.rapidalert.security.builder.AuthenticationJsonBuilder;
+import com.rapidalert.security.service.MessageSourceService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;

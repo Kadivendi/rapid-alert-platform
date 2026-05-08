@@ -1,6 +1,6 @@
-package com.example.template.client;
+package com.rapidalert.template.client;
 
-import com.example.template.dto.response.RecipientResponse;
+import com.rapidalert.template.dto.response.RecipientResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.security;
+package com.rapidalert.security;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

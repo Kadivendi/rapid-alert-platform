@@ -1,4 +1,4 @@
-package com.example.notification.util;
+package com.rapidalert.notification.util;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.rebalancer.config;
+package com.rapidalert.rebalancer.config;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.test.context.ActiveProfiles;

@@ -1,9 +1,9 @@
-package com.example.notification.controller;
+package com.rapidalert.notification.controller;
 
-import com.example.notification.dto.kafka.NotificationKafka;
-import com.example.notification.dto.response.NotificationHistoryResponse;
-import com.example.notification.dto.response.NotificationResponse;
-import com.example.notification.service.NotificationService;
+import com.rapidalert.notification.dto.kafka.NotificationKafka;
+import com.rapidalert.notification.dto.response.NotificationHistoryResponse;
+import com.rapidalert.notification.dto.response.NotificationResponse;
+import com.rapidalert.notification.service.NotificationService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

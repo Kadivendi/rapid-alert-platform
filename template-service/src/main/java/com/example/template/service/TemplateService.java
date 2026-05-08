@@ -1,13 +1,13 @@
-package com.example.template.service;
+package com.rapidalert.template.service;
 
-import com.example.template.client.RecipientClient;
-import com.example.template.dto.request.TemplateRequest;
-import com.example.template.dto.response.TemplateResponse;
-import com.example.template.exception.template.TemplateCreationException;
-import com.example.template.exception.template.TemplateNotFoundException;
-import com.example.template.exception.template.TemplateTitleAlreadyExistsException;
-import com.example.template.mapper.TemplateMapper;
-import com.example.template.repository.TemplateRepository;
+import com.rapidalert.template.client.RecipientClient;
+import com.rapidalert.template.dto.request.TemplateRequest;
+import com.rapidalert.template.dto.response.TemplateResponse;
+import com.rapidalert.template.exception.template.TemplateCreationException;
+import com.rapidalert.template.exception.template.TemplateNotFoundException;
+import com.rapidalert.template.exception.template.TemplateTitleAlreadyExistsException;
+import com.rapidalert.template.mapper.TemplateMapper;
+import com.rapidalert.template.repository.TemplateRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

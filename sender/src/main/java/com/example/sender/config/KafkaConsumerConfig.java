@@ -1,6 +1,6 @@
-package com.example.sender.config;
+package com.rapidalert.sender.config;
 
-import com.example.sender.dto.kafka.NotificationKafka;
+import com.rapidalert.sender.dto.kafka.NotificationKafka;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;

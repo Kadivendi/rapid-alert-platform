@@ -1,9 +1,9 @@
-package com.example.recipient.integration;
+package com.rapidalert.recipient.integration;
 
-import com.example.recipient.builder.RecipientJson;
-import com.example.recipient.builder.RecipientJsonBuilder;
-import com.example.recipient.config.ITBase;
-import com.example.recipient.service.MessageSourceService;
+import com.rapidalert.recipient.builder.RecipientJson;
+import com.rapidalert.recipient.builder.RecipientJsonBuilder;
+import com.rapidalert.recipient.config.ITBase;
+import com.rapidalert.recipient.service.MessageSourceService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

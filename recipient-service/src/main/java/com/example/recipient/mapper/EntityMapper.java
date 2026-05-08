@@ -1,4 +1,4 @@
-package com.example.recipient.mapper;
+package com.rapidalert.recipient.mapper;
 
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

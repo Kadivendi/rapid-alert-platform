@@ -1,4 +1,4 @@
-package com.example.notification.service;
+package com.rapidalert.notification.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;

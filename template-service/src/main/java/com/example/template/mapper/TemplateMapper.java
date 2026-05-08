@@ -1,11 +1,11 @@
-package com.example.template.mapper;
+package com.rapidalert.template.mapper;
 
-import com.example.template.client.RecipientClient;
-import com.example.template.dto.request.TemplateRequest;
-import com.example.template.dto.response.TemplateHistoryResponse;
-import com.example.template.dto.response.TemplateResponse;
-import com.example.template.entity.Template;
-import com.example.template.entity.TemplateHistory;
+import com.rapidalert.template.client.RecipientClient;
+import com.rapidalert.template.dto.request.TemplateRequest;
+import com.rapidalert.template.dto.response.TemplateHistoryResponse;
+import com.rapidalert.template.dto.response.TemplateResponse;
+import com.rapidalert.template.entity.Template;
+import com.rapidalert.template.entity.TemplateHistory;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

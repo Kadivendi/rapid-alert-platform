@@ -1,4 +1,4 @@
-package com.example.template.entity;
+package com.rapidalert.template.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

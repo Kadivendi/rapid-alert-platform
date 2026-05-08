@@ -1,4 +1,4 @@
-package com.example.notification.config;
+package com.rapidalert.notification.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;

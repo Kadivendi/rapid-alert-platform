@@ -1,4 +1,4 @@
-package com.example.security.config;
+package com.rapidalert.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

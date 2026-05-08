@@ -1,4 +1,4 @@
-package com.example.security.model;
+package com.rapidalert.security.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

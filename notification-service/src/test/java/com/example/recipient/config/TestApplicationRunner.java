@@ -1,4 +1,4 @@
-package com.example.recipient.config;
+package com.rapidalert.recipient.config;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.test.context.ActiveProfiles;

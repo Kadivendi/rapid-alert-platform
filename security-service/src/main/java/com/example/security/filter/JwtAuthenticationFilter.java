@@ -1,9 +1,9 @@
-package com.example.security.filter;
+package com.rapidalert.security.filter;
 
-import com.example.security.dto.response.ErrorResponse;
-import com.example.security.service.JwtService;
-import com.example.security.service.MessageSourceService;
-import com.example.security.service.TokenService;
+import com.rapidalert.security.dto.response.ErrorResponse;
+import com.rapidalert.security.service.JwtService;
+import com.rapidalert.security.service.MessageSourceService;
+import com.rapidalert.security.service.TokenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;

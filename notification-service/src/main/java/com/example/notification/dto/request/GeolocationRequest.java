@@ -1,4 +1,4 @@
-package com.example.notification.dto.request;
+package com.rapidalert.notification.dto.request;
 
 import lombok.Builder;
 

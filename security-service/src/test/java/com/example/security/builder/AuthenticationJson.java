@@ -1,4 +1,4 @@
-package com.example.security.builder;
+package com.rapidalert.security.builder;
 
 public record AuthenticationJson(
         String email,

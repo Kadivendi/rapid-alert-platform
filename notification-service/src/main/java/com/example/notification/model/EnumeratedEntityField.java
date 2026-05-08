@@ -1,4 +1,4 @@
-package com.example.notification.model;
+package com.rapidalert.notification.model;
 
 public interface EnumeratedEntityField {
 

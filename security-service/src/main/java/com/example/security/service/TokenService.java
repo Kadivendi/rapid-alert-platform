@@ -1,11 +1,11 @@
-package com.example.security.service;
+package com.rapidalert.security.service;
 
-import com.example.security.entity.Client;
-import com.example.security.entity.Token;
-import com.example.security.exception.client.ClientJwtNotFoundException;
-import com.example.security.exception.client.ClientNotFoundException;
-import com.example.security.exception.token.InvalidTokenException;
-import com.example.security.repository.TokenRepository;
+import com.rapidalert.security.entity.Client;
+import com.rapidalert.security.entity.Token;
+import com.rapidalert.security.exception.client.ClientJwtNotFoundException;
+import com.rapidalert.security.exception.client.ClientNotFoundException;
+import com.rapidalert.security.exception.token.InvalidTokenException;
+import com.rapidalert.security.repository.TokenRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;

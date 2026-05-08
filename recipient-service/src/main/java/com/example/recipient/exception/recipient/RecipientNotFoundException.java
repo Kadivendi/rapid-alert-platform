@@ -1,4 +1,4 @@
-package com.example.recipient.exception.recipient;
+package com.rapidalert.recipient.exception.recipient;
 
 import jakarta.persistence.EntityNotFoundException;
 

@@ -1,10 +1,10 @@
-package com.example.security.exception;
+package com.rapidalert.security.exception;
 
-import com.example.security.dto.response.ErrorResponse;
-import com.example.security.exception.client.ClientBadCredentialsException;
-import com.example.security.exception.client.ClientEmailAlreadyExistsException;
-import com.example.security.exception.client.ClientNotFoundException;
-import com.example.security.exception.token.InvalidTokenException;
+import com.rapidalert.security.dto.response.ErrorResponse;
+import com.rapidalert.security.exception.client.ClientBadCredentialsException;
+import com.rapidalert.security.exception.client.ClientEmailAlreadyExistsException;
+import com.rapidalert.security.exception.client.ClientNotFoundException;
+import com.rapidalert.security.exception.token.InvalidTokenException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;

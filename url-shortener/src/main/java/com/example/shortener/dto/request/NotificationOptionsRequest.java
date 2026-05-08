@@ -1,4 +1,4 @@
-package com.example.shortener.dto.request;
+package com.rapidalert.shortener.dto.request;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;

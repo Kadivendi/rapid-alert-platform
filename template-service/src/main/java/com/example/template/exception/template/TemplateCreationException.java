@@ -1,4 +1,4 @@
-package com.example.template.exception.template;
+package com.rapidalert.template.exception.template;
 
 public class TemplateCreationException extends RuntimeException {
 

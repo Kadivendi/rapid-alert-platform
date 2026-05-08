@@ -1,7 +1,7 @@
-package com.example.notification.dto.request;
+package com.rapidalert.notification.dto.request;
 
-import com.example.notification.dto.response.TemplateHistoryResponse;
-import com.example.notification.model.NotificationType;
+import com.rapidalert.notification.dto.response.TemplateHistoryResponse;
+import com.rapidalert.notification.model.NotificationType;
 import lombok.Builder;
 
 @Builder

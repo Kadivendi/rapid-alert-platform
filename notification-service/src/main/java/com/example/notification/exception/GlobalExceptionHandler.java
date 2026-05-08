@@ -1,9 +1,9 @@
-package com.example.notification.exception;
+package com.rapidalert.notification.exception;
 
-import com.example.notification.dto.response.ErrorResponse;
-import com.example.notification.exception.notification.NotificationMappingNotFoundException;
-import com.example.notification.exception.notification.NotificationNotFoundException;
-import com.example.notification.exception.template.TemplateRecipientsNotFound;
+import com.rapidalert.notification.dto.response.ErrorResponse;
+import com.rapidalert.notification.exception.notification.NotificationMappingNotFoundException;
+import com.rapidalert.notification.exception.notification.NotificationNotFoundException;
+import com.rapidalert.notification.exception.template.TemplateRecipientsNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

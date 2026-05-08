@@ -1,13 +1,13 @@
-package com.example.template.integration;
+package com.rapidalert.template.integration;
 
-import com.example.template.ITBase;
-import com.example.template.builder.RecipientListJson;
-import com.example.template.client.RecipientClient;
-import com.example.template.dto.kafka.Operation;
-import com.example.template.dto.kafka.TemplateRecipientKafka;
-import com.example.template.listener.KafkaListeners;
-import com.example.template.mocks.RecipientClientMock;
-import com.example.template.repository.RecipientIdRepository;
+import com.rapidalert.template.ITBase;
+import com.rapidalert.template.builder.RecipientListJson;
+import com.rapidalert.template.client.RecipientClient;
+import com.rapidalert.template.dto.kafka.Operation;
+import com.rapidalert.template.dto.kafka.TemplateRecipientKafka;
+import com.rapidalert.template.listener.KafkaListeners;
+import com.rapidalert.template.mocks.RecipientClientMock;
+import com.rapidalert.template.repository.RecipientIdRepository;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

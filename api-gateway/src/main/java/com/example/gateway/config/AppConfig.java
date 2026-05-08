@@ -1,4 +1,4 @@
-package com.example.gateway.config;
+package com.rapidalert.gateway.config;
 
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;

@@ -1,8 +1,8 @@
-package com.example.template.mapper;
+package com.rapidalert.template.mapper;
 
-import com.example.template.dto.kafka.TemplateRecipientKafka;
-import com.example.template.entity.RecipientId;
-import com.example.template.entity.Template;
+import com.rapidalert.template.dto.kafka.TemplateRecipientKafka;
+import com.rapidalert.template.entity.RecipientId;
+import com.rapidalert.template.entity.Template;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

@@ -1,8 +1,8 @@
-package com.example.recipient.mapper;
+package com.rapidalert.recipient.mapper;
 
-import com.example.recipient.dto.request.RecipientRequest;
-import com.example.recipient.dto.response.RecipientResponse;
-import com.example.recipient.entity.Recipient;
+import com.rapidalert.recipient.dto.request.RecipientRequest;
+import com.rapidalert.recipient.dto.response.RecipientResponse;
+import com.rapidalert.recipient.entity.Recipient;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

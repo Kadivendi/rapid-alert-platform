@@ -1,6 +1,6 @@
-package com.example.notification.repository;
+package com.rapidalert.notification.repository;
 
-import com.example.notification.entity.NotificationHistory;
+import com.rapidalert.notification.entity.NotificationHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 

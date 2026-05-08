@@ -1,7 +1,7 @@
-package com.example.file.controller;
+package com.rapidalert.file.controller;
 
-import com.example.file.exception.file.InvalidFileFormatException;
-import com.example.file.service.FileService;
+import com.rapidalert.file.exception.file.InvalidFileFormatException;
+import com.rapidalert.file.service.FileService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

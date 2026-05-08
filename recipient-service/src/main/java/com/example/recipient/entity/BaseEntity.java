@@ -1,4 +1,4 @@
-package com.example.recipient.entity;
+package com.rapidalert.recipient.entity;
 
 import java.io.Serializable;
 
