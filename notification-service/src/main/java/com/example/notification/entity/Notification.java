@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-import static com.example.notification.model.NotificationStatus.NEW;
+import static com.rapidalert.notification.model.NotificationStatus.NEW;
 
 @Data
 @Builder

@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Supplier;
 
-import static com.example.notification.model.NotificationType.*;
+import static com.rapidalert.notification.model.NotificationType.*;
 
 @Component
 @RequiredArgsConstructor

@@ -9,8 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 
-import static com.example.template.dto.kafka.Operation.PERSISTS;
-import static com.example.template.dto.kafka.Operation.REMOVE;
+import static com.rapidalert.template.dto.kafka.Operation.PERSISTS;
+import static com.rapidalert.template.dto.kafka.Operation.REMOVE;
 
 @RequiredArgsConstructor
 public class RecipientIdListener {

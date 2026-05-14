@@ -25,7 +25,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import static com.example.notification.model.NotificationStatus.*;
+import static com.rapidalert.notification.model.NotificationStatus.*;
 import static java.time.temporal.ChronoUnit.SECONDS;
 
 @Service

@@ -29,8 +29,8 @@ public class KafkaConsumerConfig {
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
         properties.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
-        properties.put(JsonDeserializer.TRUSTED_PACKAGES, "com.example.recipient.dto.kafka");
-        properties.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "com.example.sender.dto.kafka.NotificationKafka");
+        properties.put(JsonDeserializer.TRUSTED_PACKAGES, "com.rapidalert.recipient.dto.kafka");
+        properties.put(JsonDeserializer.VALUE_DEFAULT_TYPE, "com.rapidalert.sender.dto.kafka.NotificationKafka");
         properties.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false);
         return properties;
     }

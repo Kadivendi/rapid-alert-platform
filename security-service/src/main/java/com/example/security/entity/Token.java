@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static com.example.security.model.TokenType.BEARER;
+import static com.rapidalert.security.model.TokenType.BEARER;
 
 @Data
 @Builder

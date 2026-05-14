@@ -22,12 +22,12 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-import static com.example.template.dto.kafka.Operation.PERSISTS;
-import static com.example.template.dto.kafka.Operation.REMOVE;
-import static com.example.template.enums.Url.ADD_REC;
-import static com.example.template.enums.Url.CREATE;
-import static com.example.template.integration.TemplateControllerIT.CLIENT_ID;
-import static com.example.template.integration.TemplateControllerIT.TEMPLATE;
+import static com.rapidalert.template.dto.kafka.Operation.PERSISTS;
+import static com.rapidalert.template.dto.kafka.Operation.REMOVE;
+import static com.rapidalert.template.enums.Url.ADD_REC;
+import static com.rapidalert.template.enums.Url.CREATE;
+import static com.rapidalert.template.integration.TemplateControllerIT.CLIENT_ID;
+import static com.rapidalert.template.integration.TemplateControllerIT.TEMPLATE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

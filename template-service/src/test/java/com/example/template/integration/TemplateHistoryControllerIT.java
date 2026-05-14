@@ -12,9 +12,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
-import static com.example.template.enums.Url.*;
-import static com.example.template.integration.TemplateControllerIT.CLIENT_ID;
-import static com.example.template.integration.TemplateControllerIT.TEMPLATE;
+import static com.rapidalert.template.enums.Url.*;
+import static com.rapidalert.template.integration.TemplateControllerIT.CLIENT_ID;
+import static com.rapidalert.template.integration.TemplateControllerIT.TEMPLATE;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
